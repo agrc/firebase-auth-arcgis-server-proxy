@@ -1,0 +1,18 @@
+{
+  "name": "utahid-firebase-auth-back",
+  "version": "0.0.0",
+  "description": "ExpressJS handles and middleware for using UtahID to authenticate with Firebase",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Davis <stdavis@utah.gov>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "prettier": "^2.6.2",
+    "prettier-plugin-organize-imports": "^2.3.4"
+  }
+}
