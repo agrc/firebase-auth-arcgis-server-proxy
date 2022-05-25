@@ -4,10 +4,15 @@ import admin from 'firebase-admin';
 import functions from 'firebase-functions';
 import got from 'got';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { applyMappings, applyToken } from './utils.js';
 
 const TOKEN_LIFE_TIME = 60; // seconds
-const TOKEN_REFRESH_BUFFER = 1000 * 60 * 5; // 5 minutes in milliseconds
 const FAKE_REFERER = 'http://arcgisproxy';
+const TOKEN_REFRESH_BUFFER = 1000 * 60 * 5; // 5 minutes in milliseconds
+
+function isTokenExpired(expires) {
+  return expires + TOKEN_REFRESH_BUFFER < Date.now();
+}
 
 export default function init({ arcgisServer, app, mappings }) {
   if (!app) {
@@ -20,8 +25,13 @@ export default function init({ arcgisServer, app, mappings }) {
 
   let tokenInfo; // todo: store this in redis/datastore?
   async function getToken() {
-    functions.logger.log('requesting new token');
+    if (tokenInfo && !isTokenExpired(tokenInfo.expires)) {
+      functions.logger.log('returning cached token');
 
+      return tokenInfo.token;
+    }
+
+    functions.logger.log('requesting new token');
     try {
       const response = await got
         .post('https://mapserv.utah.gov/arcgis/tokens/generateToken', {
@@ -36,7 +46,9 @@ export default function init({ arcgisServer, app, mappings }) {
         })
         .json();
 
-      return response;
+      tokenInfo = response;
+
+      return response.token;
     } catch (error) {
       functions.logger.error(error);
 
@@ -44,31 +56,14 @@ export default function init({ arcgisServer, app, mappings }) {
     }
   }
 
-  function isTokenExpired(expires) {
-    return expires + TOKEN_REFRESH_BUFFER < Date.now();
-  }
-
-  async function pathRewrite(path) {
-    let newPath;
-    mappings.forEach(([from, to]) => {
-      newPath = path.replace(from, to);
-    });
-
-    if (!tokenInfo || isTokenExpired(tokenInfo.expires)) {
-      tokenInfo = await getToken();
-    }
-
-    const uri = new URL(newPath, 'http://dummy');
-    const params = new URLSearchParams(uri.search);
-    params.append('token', tokenInfo.token);
-
-    return `${uri.pathname}?${params}`;
-  }
-
   const options = {
     target: arcgisServer.host,
     changeOrigin: true,
-    pathRewrite,
+    pathRewrite: async (path) => {
+      const mappedPath = applyMappings(path, mappings);
+
+      return applyToken(mappedPath, await getToken());
+    },
     logger: functions.logger,
     onProxyReq: (proxyReq) => {
       proxyReq.setHeader('Referer', FAKE_REFERER);
