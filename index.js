@@ -90,7 +90,6 @@ export default function init({ arcgisServer, app, mappings }) {
 
     try {
       const decodedIdToken = await admin.auth().verifyIdToken(idToken);
-      functions.logger.log('ID Token correctly decoded', decodedIdToken);
       request.user = decodedIdToken;
       next();
 
