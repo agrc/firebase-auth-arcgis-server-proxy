@@ -34,7 +34,7 @@ export default function init({ arcgisServer, app, mappings }) {
     functions.logger.log('requesting new token');
     try {
       const response = await got
-        .post('https://mapserv.utah.gov/arcgis/tokens/generateToken', {
+        .post(`${arcgisServer.host}/arcgis/tokens/generateToken`, {
           form: {
             username: arcgisServer.username,
             password: arcgisServer.password,
