@@ -77,9 +77,9 @@ export default function init({ arcgisServer, app, mappings }) {
 
     if (!request.headers.authorization || !request.headers.authorization.startsWith('Bearer ')) {
       functions.logger.error(
-        'No Firebase ID token was passed as a Bearer token in the Authorization header.',
+        'No Firebase access token was passed as a Bearer token in the Authorization header.',
         'Make sure you authorize your request by providing the following HTTP header:',
-        'Authorization: Bearer <Firebase ID Token>'
+        'Authorization: Bearer <Firebase Access Token>'
       );
       response.status(403).send('Unauthorized');
 
