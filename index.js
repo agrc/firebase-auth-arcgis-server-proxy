@@ -6,7 +6,7 @@ import got from 'got';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { applyMappings, applyToken } from './utils.js';
 
-const TOKEN_LIFE_TIME = 60; // seconds
+const TOKEN_LIFE_TIME = 60; // minutes
 const FAKE_REFERER = 'http://arcgisproxy';
 const TOKEN_REFRESH_BUFFER = 1000 * 60 * 5; // 5 minutes in milliseconds
 
