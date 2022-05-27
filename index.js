@@ -1,3 +1,4 @@
+import { Firestore } from '@google-cloud/firestore';
 import cors from 'cors';
 import express from 'express';
 import admin from 'firebase-admin';
@@ -14,6 +15,8 @@ function isTokenExpired(expires) {
   return expires - TOKEN_REFRESH_BUFFER < Date.now();
 }
 
+const firestore = new Firestore();
+
 export default function init({ arcgisServer, app, mappings }) {
   if (!app) {
     app = express();
@@ -23,15 +26,18 @@ export default function init({ arcgisServer, app, mappings }) {
 
   admin.initializeApp();
 
-  let tokenInfo; // todo: store this in redis/datastore?
   async function getToken() {
-    if (tokenInfo && !isTokenExpired(tokenInfo.expires)) {
-      functions.logger.log('returning cached token');
+    const doc = firestore.doc('tokens/arcgis');
+    const snapshot = await doc.get();
+    const data = snapshot.data();
 
-      return tokenInfo.token;
+    if (snapshot.exists && !isTokenExpired(data.expires)) {
+      functions.logger.debug('returning cached token');
+
+      return data.token;
     }
 
-    functions.logger.log('requesting new token');
+    functions.logger.debug('requesting new token');
     try {
       const response = await got
         .post(`${arcgisServer.host}/arcgis/tokens/generateToken`, {
@@ -46,7 +52,7 @@ export default function init({ arcgisServer, app, mappings }) {
         })
         .json();
 
-      tokenInfo = response;
+      await doc.set(response);
 
       return response.token;
     } catch (error) {
