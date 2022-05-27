@@ -11,7 +11,7 @@ const FAKE_REFERER = 'http://arcgisproxy';
 const TOKEN_REFRESH_BUFFER = 1000 * 60 * 5; // 5 minutes in milliseconds
 
 function isTokenExpired(expires) {
-  return expires + TOKEN_REFRESH_BUFFER < Date.now();
+  return expires - TOKEN_REFRESH_BUFFER < Date.now();
 }
 
 export default function init({ arcgisServer, app, mappings }) {
