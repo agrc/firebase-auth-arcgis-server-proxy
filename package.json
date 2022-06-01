@@ -11,7 +11,7 @@
   "author": "Scott Davis <stdavis@utah.gov>",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.15.0",
+    "eslint": "^8.16.0",
     "eslint-config-prettier": "^8.5.0",
     "jest": "^28.1.0",
     "prettier": "^2.6.2",
@@ -23,7 +23,7 @@
     "express": "^4.18.1",
     "firebase-admin": "^10.2.0",
     "firebase-functions": "^3.21.2",
-    "got": "^12.0.4",
+    "got": "^12.1.0",
     "http-proxy-middleware": "^2.0.6"
   }
 }
