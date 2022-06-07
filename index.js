@@ -4,7 +4,7 @@ import express from 'express';
 import admin from 'firebase-admin';
 import functions from 'firebase-functions';
 import got from 'got';
-import { createProxyMiddleware } from 'http-proxy-middleware';
+import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
 import { applyMappings, applyToken } from './utils.js';
 
 const TOKEN_LIFE_TIME = 60; // minutes
@@ -75,6 +75,8 @@ export default function init({ arcgisServer, app, mappings }) {
       Authorization: null,
       Referer: FAKE_REFERER,
     },
+    on: {
+      proxyReq: fixRequestBody,
     },
   };
 
