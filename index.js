@@ -17,7 +17,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ arcgisServer, app, mappings }) {
+export default function init({ arcgisServer, app, mappings, claimsCheck }) {
   if (!app) {
     app = express();
   }
@@ -95,8 +95,13 @@ export default function init({ arcgisServer, app, mappings }) {
 
     try {
       const decodedIdToken = await admin.auth().verifyIdToken(idToken);
-      request.user = decodedIdToken;
-      next();
+
+      if (claimsCheck && claimsCheck(decodedIdToken)) {
+        request.user = decodedIdToken;
+        next();
+      } else {
+        response.status(403).send('Unauthorized: claims check failed');
+      }
 
       return;
     } catch (error) {
