@@ -71,10 +71,10 @@ export default function init({ arcgisServer, app, mappings }) {
       return applyToken(mappedPath, await getToken());
     },
     logger: functions.logger,
-    onProxyReq: (proxyReq) => {
-      // Clear authorization header so that the firebase token isn't sent to ArcGIS Server. This caused a 403 response.
-      proxyReq.setHeader('Authorization', null);
-      proxyReq.setHeader('Referer', FAKE_REFERER);
+    headers: {
+      Authorization: null,
+      Referer: FAKE_REFERER,
+    },
     },
   };
 
