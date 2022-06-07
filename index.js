@@ -80,12 +80,11 @@ export default function init({ arcgisServer, app, mappings }) {
 
   const validateFirebaseIdToken = async (request, response, next) => {
     if (!request.headers.authorization || !request.headers.authorization.startsWith('Bearer ')) {
-      functions.logger.error(
-        'No Firebase access token was passed as a Bearer token in the Authorization header.',
-        'Make sure you authorize your request by providing the following HTTP header:',
-        'Authorization: Bearer <Firebase Access Token>'
-      );
-      response.status(403).send('Unauthorized');
+      const errorMessage = `No Firebase access token was passed as a Bearer token in the Authorization header.
+        Make sure you authorize your request by providing the following HTTP header:
+        Authorization: Bearer <Firebase Access Token>`;
+      functions.logger.error(errorMessage);
+      response.status(403).send(errorMessage);
 
       return;
     }
@@ -99,8 +98,9 @@ export default function init({ arcgisServer, app, mappings }) {
 
       return;
     } catch (error) {
-      functions.logger.error('Error while verifying Firebase access token:', error);
-      response.status(403).send('Unauthorized');
+      const errorMessage = 'Error while verifying Firebase access token:';
+      functions.logger.error(errorMessage, error);
+      response.status(403).send(errorMessage);
 
       return;
     }
