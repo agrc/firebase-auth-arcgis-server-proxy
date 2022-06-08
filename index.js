@@ -96,7 +96,7 @@ export default function init({ app, mappings, host, claimsCheck }) {
     try {
       const decodedIdToken = await admin.auth().verifyIdToken(idToken);
 
-      if (claimsCheck && claimsCheck(decodedIdToken)) {
+      if (!claimsCheck || claimsCheck(decodedIdToken)) {
         request.user = decodedIdToken;
         next();
       } else {
