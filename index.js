@@ -5,7 +5,7 @@ import admin from 'firebase-admin';
 import functions from 'firebase-functions';
 import got from 'got';
 import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
-import { applyMappings, applyToken } from './utils.js';
+import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
 
 const TOKEN_LIFE_TIME = 60; // minutes
 const FAKE_REFERER = 'http://arcgisproxy';
@@ -17,7 +17,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ arcgisServer, app, mappings, claimsCheck }) {
+export default function init({ app, mappings, host, claimsCheck }) {
   if (!app) {
     app = express();
   }
@@ -26,8 +26,8 @@ export default function init({ arcgisServer, app, mappings, claimsCheck }) {
 
   admin.initializeApp();
 
-  async function getToken() {
-    const doc = firestore.doc('tokens/arcgis');
+  async function getToken(credentials) {
+    const doc = firestore.doc(`${new URL(host).host}/${credentials.username}`);
     const snapshot = await doc.get();
     const data = snapshot.data();
 
@@ -40,10 +40,10 @@ export default function init({ arcgisServer, app, mappings, claimsCheck }) {
     functions.logger.debug('requesting new token');
     try {
       const response = await got
-        .post(`${arcgisServer.host}/arcgis/tokens/generateToken`, {
+        .post(`${host}/arcgis/tokens/generateToken`, {
           form: {
-            username: arcgisServer.username,
-            password: arcgisServer.password,
+            username: credentials.username,
+            password: credentials.password,
             f: 'json',
             client: 'referer',
             referer: FAKE_REFERER,
@@ -63,12 +63,12 @@ export default function init({ arcgisServer, app, mappings, claimsCheck }) {
   }
 
   const options = {
-    target: arcgisServer.host,
+    target: host,
     changeOrigin: true,
     pathRewrite: async (path) => {
-      const mappedPath = applyMappings(path, mappings);
+      const [mappedPath, credentials] = applyMappings(path, mappings);
 
-      return applyToken(mappedPath, await getToken());
+      return applyToken(mappedPath, await getToken(credentials));
     },
     logger: functions.logger,
     headers: {
@@ -116,5 +116,5 @@ export default function init({ arcgisServer, app, mappings, claimsCheck }) {
   app.use(validateFirebaseIdToken);
   app.use(createProxyMiddleware(options));
 
-  return app;
+  return [app, getUniqueSecretNames(mappings)];
 }
