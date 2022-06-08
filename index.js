@@ -105,7 +105,7 @@ export default function init({ app, mappings, host, claimsCheck }) {
 
       return;
     } catch (error) {
-      const errorMessage = 'Error while verifying Firebase access token:';
+      const errorMessage = 'Error while verifying Firebase access token';
       functions.logger.error(errorMessage, error);
       response.status(403).send(errorMessage);
 
