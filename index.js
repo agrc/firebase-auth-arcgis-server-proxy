@@ -86,9 +86,8 @@ export default function init({ app, mappings, host, claimsCheck }) {
         Make sure you authorize your request by providing the following HTTP header:
         Authorization: Bearer <Firebase Access Token>`;
       functions.logger.error(errorMessage);
-      response.status(403).send(errorMessage);
 
-      return;
+      return response.status(403).send(errorMessage);
     }
 
     const idToken = request.headers.authorization.split('Bearer ')[1];
@@ -98,18 +97,16 @@ export default function init({ app, mappings, host, claimsCheck }) {
 
       if (!claimsCheck || claimsCheck(decodedIdToken)) {
         request.user = decodedIdToken;
-        next();
-      } else {
-        response.status(403).send('Unauthorized: claims check failed');
+
+        return next();
       }
 
-      return;
+      return response.status(403).send('Unauthorized: claims check failed');
     } catch (error) {
       const errorMessage = 'Error while verifying Firebase access token';
       functions.logger.error(errorMessage, error);
-      response.status(403).send(errorMessage);
 
-      return;
+      return response.status(403).send(errorMessage);
     }
   };
 
