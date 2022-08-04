@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.0.1...v1.1.0) (2022-08-04)
+
+
+### Features
+
+* add npm publish to CI ([fc7e4d0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/fc7e4d06ef0f28cd97a94186e15ad782f69e4d0c))
+
+
+### Bug Fixes
+
+* job output syntax ([df60d78](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/df60d785b65c330fa5460c17ca5fc9e50b192da2))
+* reference another job via needs ([58e0075](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/58e00750933da1d627f65ac2c583b317fc60e9b6))
+
 ## [1.0.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.0.0...v1.0.1) (2022-08-04)
 
 
