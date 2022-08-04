@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.0.0...v1.0.1) (2022-08-04)
+
+
+### Bug Fixes
+
+* use more explicity return statements ([7394ec1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/7394ec196d415928bc25d20984c1d4ed279d888d))
+
 ## 1.0.0 (2022-06-09)
 
 
