@@ -17,7 +17,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ app, mappings, host, claimsCheck }) {
+export default function init({ app, mappings, host, claimsCheck, proxyOptions }) {
   if (!app) {
     app = express();
   }
@@ -76,6 +76,7 @@ export default function init({ app, mappings, host, claimsCheck }) {
       Referer: FAKE_REFERER,
     },
     onProxyReq: fixRequestBody,
+    ...proxyOptions,
   };
 
   const validateFirebaseIdToken = async (request, response, next) => {
