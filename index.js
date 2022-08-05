@@ -75,9 +75,7 @@ export default function init({ app, mappings, host, claimsCheck }) {
       Authorization: null,
       Referer: FAKE_REFERER,
     },
-    on: {
-      proxyReq: fixRequestBody,
-    },
+    onProxyReq: fixRequestBody,
   };
 
   const validateFirebaseIdToken = async (request, response, next) => {
