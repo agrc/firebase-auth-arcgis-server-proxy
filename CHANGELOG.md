@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.1.0...v1.2.0) (2022-08-05)
+
+
+### Features
+
+* add proxyOptions parameter ([237c20f](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/237c20f8a6331a4cf73e0603bf820bb4750ef5af))
+
+
+### Bug Fixes
+
+* fix event subscription syntax ([5a1844f](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/5a1844fba9c5ce673f77113ea00bba4dff623a48))
+
 ## [1.1.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.0.1...v1.1.0) (2022-08-04)
 
 
