@@ -80,7 +80,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions })
   };
 
   const validateFirebaseIdToken = async (request, response, next) => {
-    if (!request.headers.authorization || !request.headers.authorization.startsWith('Bearer ')) {
+    if (!request.headers.authorization || !request.headers.authorization.slice(7)) {
       const errorMessage = `No Firebase access token was passed as a Bearer token in the Authorization header.
         Make sure you authorize your request by providing the following HTTP header:
         Authorization: Bearer <Firebase Access Token>`;
@@ -89,7 +89,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions })
       return response.status(403).send(errorMessage);
     }
 
-    const idToken = request.headers.authorization.split('Bearer ')[1];
+    const idToken = request.headers.authorization.slice(7);
 
     try {
       const decodedIdToken = await admin.auth().verifyIdToken(idToken);
