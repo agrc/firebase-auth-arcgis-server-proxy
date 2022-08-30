@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.0...v1.2.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* use a non-case-sensitive method to get bearer token ([6498c4d](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/6498c4d2e978d831fe0fd3bb2f18623d5b00783b))
+
 ## [1.2.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.1.0...v1.2.0) (2022-08-05)
 
 
