@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.4...v1.2.5) (2023-04-04)
+
+
+### 🐛 Bug Fixes
+
+* Q2 Dep Bumps 🌲 ([a727dc6](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/a727dc68d4c39d01b19b8024b654fbc6f27a073b))
+
 ## [1.2.4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.3...v1.2.4) (2022-12-13)
 
 
