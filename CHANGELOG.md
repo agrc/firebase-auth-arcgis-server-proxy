@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0-0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.6...v1.3.0-0) (2023-07-10)
+
+
+### 🚀 Features
+
+* add verbose option ([3bce065](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/3bce0658ead63fc362f2c9670dfe364ea619b2b9))
+
+
+### 🐛 Bug Fixes
+
+* bump proxy middleware ([2132fde](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/2132fde766cedfcb0c5c7d9511f2928bba33c855))
+
 ## [1.2.6](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.5...v1.2.6) (2023-07-04)
 
 
