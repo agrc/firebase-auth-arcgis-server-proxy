@@ -82,15 +82,15 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           functions.logger.debug('proxyRequest', {
             method: proxyRequest.method,
             path: proxyRequest.path,
-            headers: proxyRequest.headers,
+            headers: proxyRequest.getHeaders(),
             body: proxyRequest.body,
           });
 
           functions.logger.debug('request', {
-            method: proxyRequest.method,
-            path: proxyRequest.path,
-            headers: proxyRequest.headers,
-            body: proxyRequest.body,
+            method: request.method,
+            path: request.path,
+            headers: request.headers,
+            body: request.body,
           });
         }
 
