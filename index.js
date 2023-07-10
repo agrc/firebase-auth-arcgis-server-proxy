@@ -85,6 +85,13 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
             headers: proxyRequest.headers,
             body: proxyRequest.body,
           });
+
+          functions.logger.debug('request', {
+            method: proxyRequest.method,
+            path: proxyRequest.path,
+            headers: proxyRequest.headers,
+            body: proxyRequest.body,
+          });
         }
 
         return fixRequestBody(proxyRequest, request);
