@@ -1,5 +1,6 @@
 import { Firestore } from '@google-cloud/firestore';
 import cors from 'cors';
+import debug from 'debug';
 import express from 'express';
 import admin from 'firebase-admin';
 import functions from 'firebase-functions';
@@ -17,7 +18,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ app, mappings, host, claimsCheck, proxyOptions }) {
+export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose }) {
   if (!app) {
     app = express();
   }
@@ -108,6 +109,11 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions })
       return response.status(403).send(errorMessage);
     }
   };
+
+  if (verbose && !debug.enabled('http-proxy-middleware')) {
+    console.log('Enabling http-proxy-middleware debug mode');
+    debug.enable('http-proxy-middleware');
+  }
 
   app.use(validateFirebaseIdToken);
   app.use(createProxyMiddleware(options));
