@@ -77,7 +77,18 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
       Referer: FAKE_REFERER,
     },
     on: {
-      proxyReq: fixRequestBody,
+      proxyReq: (proxyRequest, request) => {
+        if (verbose) {
+          functions.logger.debug('proxyRequest', {
+            method: proxyRequest.method,
+            path: proxyRequest.path,
+            headers: proxyRequest.headers,
+            body: proxyRequest.body,
+          });
+        }
+
+        return fixRequestBody(proxyRequest, request);
+      },
     },
     ...proxyOptions,
   };
