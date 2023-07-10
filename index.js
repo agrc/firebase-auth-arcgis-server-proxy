@@ -76,7 +76,9 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
       Authorization: null,
       Referer: FAKE_REFERER,
     },
-    onProxyReq: fixRequestBody,
+    on: {
+      proxyReq: fixRequestBody,
+    },
     ...proxyOptions,
   };
 
