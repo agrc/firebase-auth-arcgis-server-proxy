@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0-3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-2...v1.3.0-3) (2023-07-10)
+
+
+### 🐛 Bug Fixes
+
+* fix logging props ([dbd2ee1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/dbd2ee194b849d947ad6bb181a4ca879ea1177c4))
+
 ## [1.3.0-2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-1...v1.3.0-2) (2023-07-10)
 
 
