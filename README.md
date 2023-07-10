@@ -41,3 +41,5 @@ export const maps = functions.runWith({ secrets }).https.onRequest(proxy);
 ```
 
 `host` and `mappings` are required but `checkClaims` is optional. `secrets` must match the name of a [Firebase Functions secret](https://firebase.google.com/docs/functions/config-env#create-secret).
+
+Set option `verbose: true` to turn on verbose logging.
