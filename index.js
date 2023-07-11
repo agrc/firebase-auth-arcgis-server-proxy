@@ -79,14 +79,14 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     on: {
       proxyReq: (proxyRequest, request) => {
         if (verbose) {
-          functions.logger.debug('proxyRequest', {
+          functions.logger.debug('outgoing request to target server', {
             method: proxyRequest.method,
             path: proxyRequest.path,
             headers: proxyRequest.getHeaders(),
             body: proxyRequest.body,
           });
 
-          functions.logger.debug('request', {
+          functions.logger.debug('incoming request', {
             method: request.method,
             path: request.path,
             headers: request.headers,
