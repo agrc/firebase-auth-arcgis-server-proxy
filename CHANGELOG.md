@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0-5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-4...v1.3.0-5) (2023-07-11)
+
+
+### 🐛 Bug Fixes
+
+* add beta npm tag to dev releases ([32c9096](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/32c90961e5a48b5d2fc094cb24f1cecf87e8cdeb))
+
 ## [1.3.0-4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-3...v1.3.0-4) (2023-07-11)
 
 
