@@ -18,7 +18,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose }) {
+export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose, appendToken=true }) {
   if (!app) {
     app = express();
   }
@@ -67,9 +67,13 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     target: host,
     changeOrigin: true,
     pathRewrite: async (path) => {
-      const [mappedPath, credentials] = applyMappings(path, mappings);
+      const [mappedPath, credentials] = applyMappings(path, mappings, appendToken);
 
-      return applyToken(mappedPath, await getToken(credentials));
+      if (appendToken) {
+        return applyToken(mappedPath, await getToken(credentials));
+      } else {
+        return mappedPath;
+      }
     },
     logProvider: () => functions.logger,
     logLevel: 'debug',

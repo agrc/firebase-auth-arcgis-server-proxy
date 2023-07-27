@@ -1,4 +1,4 @@
-export function applyMappings(path, mappings) {
+export function applyMappings(path, mappings, appendToken) {
   let variableName;
   for (const { from, to, secrets } of mappings) {
     if (from.test(path)) {
@@ -7,6 +7,10 @@ export function applyMappings(path, mappings) {
 
       break;
     }
+  }
+
+  if (!appendToken) {
+    return [path.toString(), null];
   }
 
   if (!variableName) {
