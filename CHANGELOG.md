@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-7...v1.4.0-0) (2023-07-27)
+
+
+### 🚀 Features
+
+* support wide open services ([6935367](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/6935367854426c2980d0602aedccc516d7262a14))
+
 ## [1.3.0-7](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-6...v1.3.0-7) (2023-07-27)
 
 
