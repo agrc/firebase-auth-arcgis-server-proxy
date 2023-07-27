@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0-6](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-5...v1.3.0-6) (2023-07-27)
+
+
+### 🐛 Bug Fixes
+
+* try going back to latest version of proxy middleware ([0eb7187](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/0eb7187a1618d83eca6d4328ccc8abfa2e7c8d92))
+
 ## [1.3.0-5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.3.0-4...v1.3.0-5) (2023-07-11)
 
 
