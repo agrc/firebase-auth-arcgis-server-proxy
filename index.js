@@ -102,7 +102,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           method: proxyResponse.method,
           path: proxyResponse.path,
           headers: proxyResponse.headers,
-          body: proxyResponse.body,
+          statusCode: proxyResponse.statusCode,
         });
       }
     },
