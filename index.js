@@ -78,11 +78,14 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     logProvider: () => functions.logger,
     logLevel: 'debug',
     onProxyReq: (proxyRequest, request) => {
-      proxyRequest.removeHeader('transfer-encoding');
+      fixRequestBody(proxyRequest, request);
+
+      if (proxyRequest.getHeader('transfer-encoding') === 'chunked') {
+        proxyRequest.removeHeader('content-length');
+      }
+
       proxyRequest.removeHeader('authorization');
       proxyRequest.setHeader('referer', FAKE_REFERER);
-
-      fixRequestBody(proxyRequest, request);
 
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
