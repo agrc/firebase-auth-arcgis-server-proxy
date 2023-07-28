@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-4...v1.4.0-5) (2023-07-28)
+
+
+### 🐛 Bug Fixes
+
+* remove transfer-encoding header ([18d4d8b](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/18d4d8b16ad196b74c56a7c33d720ea9fd37e5a5))
+
 ## [1.4.0-4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-3...v1.4.0-4) (2023-07-28)
 
 
