@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-2...v1.4.0-3) (2023-07-28)
+
+
+### 🐛 Bug Fixes
+
+* try better capitalization ([370715e](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/370715e95fda8805e8565705ba038ba67dc58976))
+
 ## [1.4.0-2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-1...v1.4.0-2) (2023-07-28)
 
 
