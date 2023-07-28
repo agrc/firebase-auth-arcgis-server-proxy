@@ -5,7 +5,8 @@ import express from 'express';
 import admin from 'firebase-admin';
 import functions from 'firebase-functions';
 import got from 'got';
-import { createProxyMiddleware, fixRequestBody } from 'http-proxy-middleware';
+import { createProxyMiddleware } from 'http-proxy-middleware';
+import { fixRequestBody } from './fix-request-body.js';
 import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
 
 const TOKEN_LIFE_TIME = 60; // minutes
@@ -18,7 +19,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose, appendToken=true }) {
+export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose, appendToken = true }) {
   if (!app) {
     app = express();
   }
@@ -77,11 +78,12 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     },
     logProvider: () => functions.logger,
     logLevel: 'debug',
-    headers: {
-      Authorization: null,
-      Referer: FAKE_REFERER,
-    },
     onProxyReq: (proxyRequest, request) => {
+      proxyRequest.removeHeader('authorization');
+      proxyRequest.setHeader('referer', FAKE_REFERER);
+      functions.logger.debug('pre-write headers', proxyRequest.getHeaders());
+      fixRequestBody(proxyRequest, request);
+
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
           method: proxyRequest.method,
@@ -97,8 +99,6 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           body: request.body,
         });
       }
-
-      return fixRequestBody(proxyRequest, request);
     },
     onProxyRes: (proxyResponse) => {
       if (verbose) {
