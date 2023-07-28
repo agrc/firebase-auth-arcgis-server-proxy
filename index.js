@@ -18,7 +18,7 @@ function isTokenExpired(expires) {
 
 const firestore = new Firestore();
 
-export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose, appendToken=true }) {
+export default function init({ app, mappings, host, claimsCheck, proxyOptions, verbose, appendToken = true }) {
   if (!app) {
     app = express();
   }
@@ -77,11 +77,6 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     },
     logProvider: () => functions.logger,
     logLevel: 'debug',
-    headers: {
-      Authorization: null,
-      'Content-Length': null,
-      Referer: FAKE_REFERER,
-    },
     onProxyReq: (proxyRequest, request) => {
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
@@ -98,6 +93,10 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           body: request.body,
         });
       }
+
+      proxyRequest.removeHeader('Content-Length');
+      proxyRequest.removeHeader('Authorization');
+      proxyRequest.setHeader('Referer', FAKE_REFERER);
 
       return fixRequestBody(proxyRequest, request);
     },
