@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-3...v1.4.0-4) (2023-07-28)
+
+
+### 🐛 Bug Fixes
+
+* modify headers before logging them ([0146a93](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/0146a93b3a863ebb3b9fa5260ad0af20cad70f9f))
+
 ## [1.4.0-3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-2...v1.4.0-3) (2023-07-28)
 
 
