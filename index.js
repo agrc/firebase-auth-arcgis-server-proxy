@@ -78,9 +78,11 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     logProvider: () => functions.logger,
     logLevel: 'debug',
     onProxyReq: (proxyRequest, request) => {
-      proxyRequest.removeHeader('Content-Length');
-      proxyRequest.removeHeader('Authorization');
-      proxyRequest.setHeader('Referer', FAKE_REFERER);
+      proxyRequest.removeHeader('transfer-encoding');
+      proxyRequest.removeHeader('authorization');
+      proxyRequest.setHeader('referer', FAKE_REFERER);
+
+      fixRequestBody(proxyRequest, request);
 
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
@@ -97,8 +99,6 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           body: request.body,
         });
       }
-
-      return fixRequestBody(proxyRequest, request);
     },
     onProxyRes: (proxyResponse) => {
       if (verbose) {
