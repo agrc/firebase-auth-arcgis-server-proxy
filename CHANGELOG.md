@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.0-2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-1...v1.4.0-2) (2023-07-28)
+
+
+### 🐛 Bug Fixes
+
+* try a different way of removing headers ([e4e387e](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/e4e387ea260beeda9646a90ea1a3e3590c28c5e2))
+* unit tests ([1ab3ec9](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/1ab3ec9a2403ba78a3a7e7f995446afdb25370a6))
+
 ## [1.4.0-1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-0...v1.4.0-1) (2023-07-28)
 
 
