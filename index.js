@@ -78,6 +78,10 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     logProvider: () => functions.logger,
     logLevel: 'debug',
     onProxyReq: (proxyRequest, request) => {
+      proxyRequest.removeHeader('Content-Length');
+      proxyRequest.removeHeader('Authorization');
+      proxyRequest.setHeader('Referer', FAKE_REFERER);
+
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
           method: proxyRequest.method,
@@ -93,10 +97,6 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
           body: request.body,
         });
       }
-
-      proxyRequest.removeHeader('Content-Length');
-      proxyRequest.removeHeader('Authorization');
-      proxyRequest.setHeader('Referer', FAKE_REFERER);
 
       return fixRequestBody(proxyRequest, request);
     },
