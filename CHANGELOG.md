@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-8](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-7...v1.4.0-8) (2023-07-31)
+
+
+### 🐛 Bug Fixes
+
+* remove content-length header ([a82e168](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/a82e1689e6ac94b6f6e47884a93b2e751619382f))
+
 ## [1.4.0-7](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-6...v1.4.0-7) (2023-07-28)
 
 
