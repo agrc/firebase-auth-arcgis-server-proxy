@@ -6,6 +6,7 @@ import admin from 'firebase-admin';
 import functions from 'firebase-functions';
 import got from 'got';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import { fixRequestBody } from './fix-request-body.js';
 import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
 
 const TOKEN_LIFE_TIME = 60; // minutes
@@ -78,15 +79,15 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
     logProvider: () => functions.logger,
     logLevel: 'debug',
     onProxyReq: (proxyRequest, request) => {
-      // fixRequestBody(proxyRequest, request);
-
-      if (proxyRequest.getHeader('transfer-encoding') === 'chunked') {
-        functions.logger.debug('removing content-length header');
-        proxyRequest.removeHeader('content-length');
-      }
-
       proxyRequest.removeHeader('authorization');
       proxyRequest.setHeader('referer', FAKE_REFERER);
+      functions.logger.debug('pre-write headers', proxyRequest.getHeaders());
+      fixRequestBody(proxyRequest, request);
+
+      // if (proxyRequest.getHeader('transfer-encoding') === 'chunked') {
+      //   functions.logger.debug('removing content-length header');
+      //   proxyRequest.removeHeader('content-length');
+      // }
 
       if (verbose) {
         functions.logger.debug('outgoing request to target server', {
