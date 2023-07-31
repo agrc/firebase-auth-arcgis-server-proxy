@@ -77,11 +77,11 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
       }
     },
     logProvider: () => functions.logger,
-    logLevel: 'debug',
+    logLevel: verbose ? 'debug' : 'info',
     onProxyReq: (proxyRequest, request) => {
       proxyRequest.removeHeader('authorization');
       proxyRequest.setHeader('referer', FAKE_REFERER);
-      functions.logger.debug('pre-write headers', proxyRequest.getHeaders());
+
       fixRequestBody(proxyRequest, request);
 
       if (verbose) {
