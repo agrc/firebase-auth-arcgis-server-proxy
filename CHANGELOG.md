@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0-10](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-9...v1.4.0-10) (2023-07-31)
+
+
+### 🐛 Bug Fixes
+
+* remove unused param ([89f72d4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/89f72d4bcc91bcef14a1ff115cb7a69f11a8142c))
+
 ## [1.4.0-9](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-0...v1.4.0-9) (2023-07-31)
 
 
