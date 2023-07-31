@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.4.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.6...v1.4.0) (2023-07-31)
+
+
+### 🚀 Features
+
+* add verbose option ([b4d67f8](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/b4d67f877a128075d8f090f8282dc0b915f475a4))
+* support wide open services ([41025ff](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/41025ff33af89cc1fdbee33a5706659d390200a9))
+
+
+### 🐛 Bug Fixes
+
+* add beta npm tag to dev releases ([d7543ce](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/d7543cec16f095fd6154ada81813b7eafd467d3d))
+* add more logging ([b9a49e2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/b9a49e29c32ade30766a63d2e5989bcff2bfedae))
+* better log object labels ([e462ad4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/e462ad408c238482d62cbb4dadc0526c8e450681))
+* bump proxy middleware ([8bef951](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/8bef951d51fada59a6c8199649bccde071ddca42))
+* fix logging props ([deae6d7](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/deae6d744cce10323e6c8908936e8e684749d909))
+* log status code from response ([5f26448](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/5f2644831d6843d4e850f5b9afdd2b94154d85ab))
+* more logging ([069d6c4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/069d6c4215c9c232371b5597ec06701975541776))
+* remove content-length header from outgoing request to target server ([5e8024e](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/5e8024e98afc7a7daf6dc9d2e8622f49f251857a))
+* remove unused param ([954168e](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/954168e68d0119d089ea6a25e6e4904700ecae39))
+* remove unused param ([611db7d](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/611db7dcdd1fed55aa6c295de65daad89cfe79cf))
+* try going back to latest version of proxy middleware ([df4821d](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/df4821d9ee794b9229b2556fabf9ae4458dc31ef))
+
 ## [1.4.0-11](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0-10...v1.4.0-11) (2023-07-31)
 
 
