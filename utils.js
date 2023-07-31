@@ -9,10 +9,6 @@ export function applyMappings(path, mappings) {
     }
   }
 
-  if (!appendToken) {
-    return [path.toString(), null];
-  }
-
   if (!variableName) {
     throw new Error(`No mapping found for path: ${path}`);
   }
