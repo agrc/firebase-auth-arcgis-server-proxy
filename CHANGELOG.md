@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.4.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0...v1.4.1) (2023-10-10)
+
+
+### 🌲 Dependencies
+
+* bump semver from 7.3.8 to 7.5.4 ([98f90f0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/98f90f0ba89c87bd9006e58f8214ee700a7ffa87))
+* bump the safe-dependencies group with 4 updates ([a7cff1f](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/a7cff1f13e86c8144057692a368cfb27f84a718e))
+* bump word-wrap from 1.2.3 to 1.2.5 ([575b107](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/575b107d5fd333ba3be3e68abba87b1ab05d0aac))
+
 ## [1.4.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.2.6...v1.4.0) (2023-07-31)
 
 
