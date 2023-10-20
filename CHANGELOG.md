@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.1...v1.4.2) (2023-10-20)
+
+
+### 🌲 Dependencies
+
+* **dev:** bump @babel/traverse from 7.23.0 to 7.23.2 ([826f2e8](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/826f2e8e24cc7f4c606cebd1396f417b043bc780))
+
 ## [1.4.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.0...v1.4.1) (2023-10-10)
 
 
