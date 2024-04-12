@@ -20,7 +20,7 @@ export function applyMappings(path, mappings) {
   let credentials;
   try {
     credentials = JSON.parse(process.env[variableName]);
-  } catch (error) {
+  } catch {
     throw new Error(`Invalid JSON in environment variable: "${variableName}"`);
   }
 
