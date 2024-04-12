@@ -72,42 +72,43 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
 
       return applyToken(mappedPath, await getToken(credentials));
     },
-    logProvider: () => functions.logger,
-    logLevel: verbose ? 'debug' : 'info',
-    onProxyReq: (proxyRequest, request) => {
-      proxyRequest.removeHeader('authorization');
-      proxyRequest.setHeader('referer', FAKE_REFERER);
+    logger: functions.logger,
+    on: {
+      proxyReq: (proxyRequest, request) => {
+        proxyRequest.removeHeader('authorization');
+        proxyRequest.setHeader('referer', FAKE_REFERER);
 
-      fixRequestBody(proxyRequest, request);
+        fixRequestBody(proxyRequest, request);
 
-      if (verbose) {
-        functions.logger.debug('outgoing request to target server', {
-          method: proxyRequest.method,
-          path: proxyRequest.path,
-          headers: proxyRequest.getHeaders(),
-          body: proxyRequest.body,
-        });
+        if (verbose) {
+          functions.logger.debug('outgoing request to target server', {
+            method: proxyRequest.method,
+            path: proxyRequest.path,
+            headers: proxyRequest.getHeaders(),
+            body: proxyRequest.body,
+          });
 
-        functions.logger.debug('incoming request', {
-          method: request.method,
-          path: request.path,
-          headers: request.headers,
-          body: request.body,
-        });
-      }
-    },
-    onProxyRes: (proxyResponse) => {
-      if (verbose) {
-        functions.logger.debug('response from target server', {
-          method: proxyResponse.method,
-          path: proxyResponse.path,
-          headers: proxyResponse.headers,
-          statusCode: proxyResponse.statusCode,
-        });
-      }
-    },
-    onError: (error) => {
-      functions.logger.error(error);
+          functions.logger.debug('incoming request', {
+            method: request.method,
+            path: request.path,
+            headers: request.headers,
+            body: request.body,
+          });
+        }
+      },
+      proxyRes: (proxyResponse) => {
+        if (verbose) {
+          functions.logger.debug('response from target server', {
+            method: proxyResponse.method,
+            path: proxyResponse.path,
+            headers: proxyResponse.headers,
+            statusCode: proxyResponse.statusCode,
+          });
+        }
+      },
+      error: (error) => {
+        functions.logger.error(error);
+      },
     },
     ...proxyOptions,
   };
