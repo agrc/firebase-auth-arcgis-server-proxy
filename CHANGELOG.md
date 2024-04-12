@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.0.0-0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.2...v2.0.0-0) (2024-04-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* 
+
+### 🐛 Bug Fixes
+
+* update to new eslint config filename ([a74c7bf](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/a74c7bfd8a5900e0d9e811058cf7bca7e63ba8fd))
+
+
+### 🌲 Dependencies
+
+* bump major deps ([c0e2a4c](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/c0e2a4cbf299fb6e9f6b53b04ebedefde8eca58c))
+* bump the safe-dependencies group with 7 updates ([83c1663](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/83c16630b0df4473de1c6fc72b266da26b9df8b4))
+* npm audit fix ([07491ef](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/07491efce7844a751b4047344e61f3624c4a8689))
+
 ## [1.4.2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.1...v1.4.2) (2023-10-20)
 
 
