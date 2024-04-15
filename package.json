@@ -1,6 +1,6 @@
 {
   "name": "firebase-auth-arcgis-server-proxy",
-  "version": "1.4.2",
+  "version": "2.0.0",
   "description": "An authenticated Firebase function for proxying requests to ArcGIS Server services",
   "type": "module",
   "main": "index.js",
