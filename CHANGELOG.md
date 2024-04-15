@@ -5,7 +5,7 @@
 
 ### ⚠ BREAKING CHANGES
 
-* 
+* Bump http-proxy-middleware to v3 [which includes some breaking changes]https://github.com/chimurai/http-proxy-middleware/blob/master/MIGRATION.md) which could technically break consumers of this library since some options are passed on to http-proxy-middleware. However, I believe that most, if not all, of the consumers will be able to update without any changes.
 
 ### 🐛 Bug Fixes
 
