@@ -1,5 +1,14 @@
 # Changelog
 
+## [2.0.1](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.0...v2.0.1) (2024-06-21)
+
+
+### 🌲 Dependencies
+
+* bump @grpc/grpc-js from 1.10.6 to 1.10.9 ([e9344d7](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/e9344d727e60d06c0fbe820158b755b859121f73))
+* bump braces from 3.0.2 to 3.0.3 ([40624e8](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/40624e8fa32d066ca2ea9c1e908bdcbe0d4db613))
+* bump the safe-dependencies group across 1 directory with 5 updates ([f61a87f](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/f61a87f9e39142144710e4a4b86947d6782a40fe))
+
 ## [2.0.0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v1.4.2...v2.0.0) (2024-04-15)
 
 
