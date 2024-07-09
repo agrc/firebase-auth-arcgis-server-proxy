@@ -2,7 +2,7 @@
   "author": "Scott Davis <stdavis@utah.gov>",
   "name": "firebase-auth-arcgis-server-proxy",
   "homepage": "https://github.com/agrc/firebase-auth-arcgis-server-proxy",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "An authenticated Firebase function for proxying requests to ArcGIS Server services",
   "type": "module",
   "main": "index.js",

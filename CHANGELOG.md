@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.2...v2.0.3) (2024-07-09)
+
+
+### Bug Fixes
+
+* add package urls ([9ff0c5e](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/9ff0c5e7227e3698a3f1161768e852a7431d0dae))
+
 ## [2.0.2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.1...v2.0.2) (2024-07-03)
 
 
