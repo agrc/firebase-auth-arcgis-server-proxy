@@ -48,7 +48,7 @@ describe('applyMappings', () => {
     ];
 
     expect(() => applyMappings('/toolbox/0/query', mappings)).toThrowError(
-      'No environment variable is defined for: "EDITOR"'
+      'No environment variable is defined for: "EDITOR"',
     );
   });
 
@@ -63,7 +63,7 @@ describe('applyMappings', () => {
     ];
 
     expect(() => applyMappings('/toolbox/0/query', mappings)).toThrowError(
-      'Invalid JSON in environment variable: "EDITOR"'
+      'Invalid JSON in environment variable: "EDITOR"',
     );
   });
 });
