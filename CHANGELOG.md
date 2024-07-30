@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.4](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.3...v2.0.4) (2024-07-30)
+
+
+### Dependencies
+
+* bump fast-xml-parser from 4.3.6 to 4.4.1 ([e739ebf](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/e739ebfc2b670319eb2f5183ea95c5cc13952c86))
+
 ## [2.0.3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.2...v2.0.3) (2024-07-09)
 
 
