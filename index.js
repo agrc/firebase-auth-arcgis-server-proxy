@@ -58,7 +58,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
 
       return response.token;
     } catch (error) {
-      error(error);
+      logger.error(error);
 
       throw error;
     }
@@ -107,7 +107,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
         }
       },
       error: (error) => {
-        error(error);
+        logger.error(error);
       },
     },
     ...proxyOptions,
@@ -137,7 +137,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
       return response.status(403).send('Unauthorized: claims check failed');
     } catch (error) {
       const errorMessage = 'Error while verifying Firebase access token';
-      error(errorMessage, error);
+      logger.error(errorMessage, error);
 
       return response.status(403).send(errorMessage);
     }
