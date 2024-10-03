@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.0.5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.4...v2.0.5) (2024-10-03)
+
+
+### Bug Fixes
+
+* fix linting error ([d9ea0d2](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/d9ea0d2751fa690153b6fa665f0421df1a47ec9f))
+* fix some error logging ([321f364](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/321f3648af9344e475f15738919666cb9209a36b))
+
+
+### Dependencies
+
+* FY25Q2 dependency updates 🌲 ([09b4703](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/09b4703d4da4021ad77c167f742d1839142b7cc3))
+
 ## [2.0.5-0](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.4...v2.0.5-0) (2024-10-03)
 
 
