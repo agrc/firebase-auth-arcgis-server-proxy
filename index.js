@@ -118,7 +118,7 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
       const errorMessage = `No Firebase access token was passed as a Bearer token in the Authorization header.
         Make sure you authorize your request by providing the following HTTP header:
         Authorization: Bearer <Firebase Access Token>`;
-      error(errorMessage);
+      logger.error(errorMessage);
 
       return response.status(403).send(errorMessage);
     }
