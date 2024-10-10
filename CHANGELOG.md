@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.6](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.5...v2.0.6) (2024-10-10)
+
+
+### Bug Fixes
+
+* move npm package name into ugrc namespace ([1ee87c3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/1ee87c376d0ace40f932a9123d6edd0c8e000259)), closes [#159](https://github.com/agrc/firebase-auth-arcgis-server-proxy/issues/159)
+
+
+### Dependencies
+
+* bump the npm_and_yarn group with 2 updates ([4c35584](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/4c35584927ccd25b4ae83229c21737deb960826c))
+
 ## [2.0.5](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.4...v2.0.5) (2024-10-03)
 
 
