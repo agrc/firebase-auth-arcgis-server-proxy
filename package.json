@@ -33,7 +33,7 @@
     "@google-cloud/firestore": "^7.10.0",
     "cors": "^2.8.5",
     "express": "^4.21.1",
-    "firebase-admin": "^12.7.0",
+    "firebase-admin": "^13.0.1",
     "firebase-functions": "^6.1.0",
     "got": "^14.4.3",
     "http-proxy-middleware": "^3.0.3"
