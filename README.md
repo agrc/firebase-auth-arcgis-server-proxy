@@ -5,7 +5,7 @@ An authenticated Firebase function for proxying requests to ArcGIS Server servic
 ## Example Usage
 
 ```js
-import initProxy from 'firebase-auth-arcgis-server-proxy';
+import initProxy from '@ugrc/firebase-auth-arcgis-server-proxy';
 
 const options = {
   host: 'https://my-arcgis-server.com/,
