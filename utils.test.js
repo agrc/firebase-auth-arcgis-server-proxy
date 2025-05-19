@@ -1,3 +1,4 @@
+import { expect, describe, it, beforeEach, afterEach } from 'vitest';
 import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
 
 describe('applyMappings', () => {
