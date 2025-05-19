@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.9](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.8...v2.0.9) (2025-05-19)
+
+
+### Dependencies
+
+* fy25q4 package updates ([0d098ab](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/0d098ab978da5201eed1fc3e42eb474c6c5926d2))
+
+
+### Documentation
+
+* updated sample to match new name-spaced package name ([afc5ffc](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/afc5ffc05c59b1b449bc0162ec303832314410d1))
+
 ## [2.0.8](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.7...v2.0.8) (2025-01-10)
 
 
