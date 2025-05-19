@@ -19,25 +19,30 @@ jobs:
         with:
           show-progress: false
 
+      - name: 📦 Setup PNPM
+        uses: pnpm/action-setup@v4
+        with:
+          version: latest
+
       - name: ⎔ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          cache: npm
+          cache: pnpm
           registry-url: https://registry.npmjs.org
           node-version: lts/*
 
       - name: 📥 Download dependencies
-        run: npm ci
+        run: pnpm install
 
       - name: 🚢 Deploy to NPM as 'latest'
         if: github.event.release.prerelease == false
-        run: npm publish
+        run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: 🚢 Deploy to NPM as 'beta'
         if: github.event.release.prerelease == true
-        run: npm publish --tag beta
+        run: pnpm publish --tag beta
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
