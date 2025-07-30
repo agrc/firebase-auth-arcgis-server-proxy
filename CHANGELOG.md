@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.10](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.9...v2.0.10) (2025-07-30)
+
+
+### Dependencies
+
+* bump brace-expansion in the npm_and_yarn group ([6342be6](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/6342be6b2aaddf6099ae860e9da51cdea7625fb7))
+
 ## [2.0.9](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.8...v2.0.9) (2025-05-19)
 
 
