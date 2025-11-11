@@ -4,7 +4,7 @@ import debug from 'debug';
 import express from 'express';
 import admin from 'firebase-admin';
 import logger from 'firebase-functions/logger';
-import got from 'got';
+import ky from 'ky';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import { fixRequestBody } from './fix-request-body.js';
 import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
@@ -41,16 +41,16 @@ export default function init({ app, mappings, host, claimsCheck, proxyOptions, v
 
     logger.debug('requesting new token');
     try {
-      const response = await got
+      const response = await ky
         .post(`${host}/arcgis/tokens/generateToken`, {
-          form: {
+          body: new URLSearchParams({
             username: credentials.username,
             password: credentials.password,
             f: 'json',
             client: 'referer',
             referer: FAKE_REFERER,
             expiration: TOKEN_LIFE_TIME,
-          },
+          }),
         })
         .json();
 
