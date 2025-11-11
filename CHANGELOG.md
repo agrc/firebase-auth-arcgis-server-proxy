@@ -1,5 +1,13 @@
 # Changelog
 
+## [2.0.11](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.10...v2.0.11) (2025-11-11)
+
+
+### Dependencies
+
+* bump the safe-dependencies group across 1 directory with 8 updates ([ce42234](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/ce42234ec83f7210914340aac8f9812ec9f0df62))
+* **dev:** bump vitest in the major-dependencies group ([f5a3fc3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/f5a3fc318a5132a137116bc4263ca5a9d787e992))
+
 ## [2.0.10](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.9...v2.0.10) (2025-07-30)
 
 
