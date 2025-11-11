@@ -4,8 +4,8 @@ import debug from 'debug';
 import express from 'express';
 import admin from 'firebase-admin';
 import logger from 'firebase-functions/logger';
-import ky from 'ky';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import ky from 'ky';
 import { fixRequestBody } from './fix-request-body.js';
 import { applyMappings, applyToken, getUniqueSecretNames } from './utils.js';
 
