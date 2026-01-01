@@ -20,7 +20,7 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@google-cloud/firestore": "^7.11.1",
+    "@google-cloud/firestore": "^8.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0",
@@ -34,6 +34,6 @@
     "prettier": "^3.5.3",
     "prettier-plugin-organize-imports": "^4.1.0",
     "prettier-plugin-packagejson": "^2.5.13",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.6"
   }
 }
