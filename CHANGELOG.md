@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.14](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.13...v2.0.14) (2026-02-17)
+
+
+### Bug Fixes
+
+* **ci:** switch to npm trusted publishing ([c459ad3](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/c459ad3d7d6d70975112efe3608283d349c8ff45))
+
 ## [2.0.13](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.12...v2.0.13) (2026-02-17)
 
 
