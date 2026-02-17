@@ -18,9 +18,7 @@ jobs:
 
     steps:
       - name: ⬇️ Set up code
-        uses: actions/checkout@v5
-        with:
-          show-progress: false
+        uses: actions/checkout@v6
 
       - name: 📦 Setup PNPM
         uses: pnpm/action-setup@v4
