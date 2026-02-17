@@ -1,6 +1,6 @@
 {
   "name": "@ugrc/firebase-auth-arcgis-server-proxy",
-  "version": "2.0.11",
+  "version": "2.0.12",
   "description": "An authenticated Firebase function for proxying requests to ArcGIS Server services",
   "homepage": "https://github.com/agrc/firebase-auth-arcgis-server-proxy",
   "bugs": {
