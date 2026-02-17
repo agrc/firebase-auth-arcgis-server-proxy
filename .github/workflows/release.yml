@@ -35,14 +35,10 @@ jobs:
       - name: 🚢 Deploy to NPM as 'latest'
         if: github.event.release.prerelease == false
         run: pnpm publish --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       - name: 🚢 Deploy to NPM as 'beta'
         if: github.event.release.prerelease == true
         run: pnpm publish --tag beta --no-git-checks
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
   notify:
     name: Notifications
