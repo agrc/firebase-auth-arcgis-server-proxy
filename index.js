@@ -3,7 +3,7 @@ import cors from 'cors';
 import debug from 'debug';
 import express from 'express';
 import admin from 'firebase-admin';
-import logger from 'firebase-functions/logger';
+import * as logger from 'firebase-functions/logger';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 import ky from 'ky';
 import { fixRequestBody } from './fix-request-body.js';
