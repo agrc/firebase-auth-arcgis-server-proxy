@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.13](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.12...v2.0.13) (2026-02-17)
+
+
+### Bug Fixes
+
+* **ci:** disable pnpm git checks for release workflow ([515328a](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/515328a27a6702503a85326dda321b3ffd279403))
+
 ## [2.0.12](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.11...v2.0.12) (2026-02-17)
 
 
