@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.15](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.14...v2.0.15) (2026-06-16)
+
+
+### Dependencies
+
+* bump NPM dependencies 🌲 ([1bd1c74](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/1bd1c74213655dcf51e1330fba6bde65dd3f8bef))
+
 ## [2.0.14](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.13...v2.0.14) (2026-02-17)
 
 
