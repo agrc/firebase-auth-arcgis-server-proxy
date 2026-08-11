@@ -2,7 +2,10 @@ allowBuilds:
   '@firebase/util': true
   esbuild: true
   protobufjs: true
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
 minimumReleaseAgeExclude:
+  - '@ugrc/*'
   - uuid@11.1.1
   - qs@6.15.2
   - '@grpc/grpc-js@1.14.4'
