@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.17](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.16...v2.0.17) (2026-10-30)
+
+
+### Dependencies
+
+* bump proxy-addr from 2.0.7 to 2.0.8 ([e15ed43](https://github.com/agrc/firebase-auth-arcgis-server-proxy/commit/e15ed438ccb18245c3f24f5c5b617cce573eaa62))
+
 ## [2.0.16](https://github.com/agrc/firebase-auth-arcgis-server-proxy/compare/v2.0.15...v2.0.16) (2026-08-12)
 
 
